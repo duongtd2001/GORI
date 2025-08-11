@@ -1,0 +1,500 @@
+﻿{
+  "Scenario": "Classification",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "C:\\Users\\duong\\Documents\\Misumi\\DefSystem\\Data\\Data.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "TUNE 1",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 2",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 3",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 4",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 5",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 6",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 7",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 8",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 9",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 10",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TUNE 11",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmMulti",
+        "Score": 0.11677511832640852,
+        "RuntimeInSeconds": 55.294,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e5 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "TUNE 1",
+            "InputColumnName": "TUNE 1",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e5": {
+            "NumberOfLeaves": 876,
+            "MinimumExampleCountPerLeaf": 24,
+            "LearningRate": 0.80582392214779786,
+            "NumberOfTrees": 1022,
+            "SubsampleFraction": 0.35682235263166784,
+            "MaximumBinCountPerFeature": 223,
+            "FeatureFraction": 0.99999999,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 0.48838584616068459,
+            "LabelColumnName": "TUNE 1",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.10801406489199397,
+        "RuntimeInSeconds": 20.514,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "TUNE 1",
+            "InputColumnName": "TUNE 1",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfTrees": 7,
+            "NumberOfLeaves": 6,
+            "FeatureFraction": 0.95830464,
+            "LabelColumnName": "TUNE 1",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.10480611844077707,
+        "RuntimeInSeconds": 12.55,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "TUNE 1",
+            "InputColumnName": "TUNE 1",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "TUNE 1",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.098292688890259161,
+        "RuntimeInSeconds": 27.021,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "TUNE 1",
+            "InputColumnName": "TUNE 1",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfTrees": 24,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.9328115,
+            "LabelColumnName": "TUNE 1",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.076084426767630567,
+        "RuntimeInSeconds": 9.645,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "TUNE 2",
+              "TUNE 3",
+              "TUNE 4",
+              "TUNE 5",
+              "TUNE 6",
+              "TUNE 7",
+              "TUNE 8",
+              "TUNE 9",
+              "TUNE 10",
+              "TUNE 11"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "TUNE 1",
+            "InputColumnName": "TUNE 1",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 254,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "TUNE 1",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ReplaceMissingValues",
+      "e1": "Concatenate",
+      "e2": "MapValueToKey",
+      "e3": "FastTreeOva",
+      "e4": "FastForestOva",
+      "e5": "LightGbmMulti",
+      "e6": "LbfgsLogisticRegressionOva",
+      "e7": "LbfgsMaximumEntropyMulti",
+      "e8": "SdcaMaximumEntropyMulti",
+      "e9": "SdcaLogisticRegressionOva",
+      "e10": "MapKeyToValue"
+    },
+    "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7 + e8 + e9) * e10",
+    "MetricName": "MacroAccuracy",
+    "ModelFilePath": "C:\\Users\\duong\\Documents\\Misumi\\GORI\\MLModel1.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Tuner": "eci-cfo",
+    "Type": "ClassificationTrainingOption",
+    "TrainingTime": 300,
+    "OptimizeMetric": "MacroAccuracy",
+    "LabelColumn": "TUNE 1",
+    "AvailableTrainers": [
+      "SDCA",
+      "LBFGS",
+      "LGBM",
+      "FASTTREE",
+      "FASTFOREST"
+    ],
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}

@@ -1,0 +1,21 @@
+﻿<Application x:Class="GORI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GORI"
+             xmlns:services="clr-namespace:GORI.Services">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <services:Bootstrapper x:Key="Bootstrapper"></services:Bootstrapper>
+                </ResourceDictionary>
+                <ResourceDictionary Source="/ResourceDictionarys/UIColors.xaml"/>
+                <ResourceDictionary Source="/ResourceDictionarys/Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="/ResourceDictionarys/Styles/IconStyles.xaml"/>
+                <ResourceDictionary Source="/ResourceDictionarys/Styles/RadioButtonStyles.xaml"/>
+                <ResourceDictionary Source="/ResourceDictionarys/Styles/TextBlockStyles.xaml"/>
+                <ResourceDictionary Source="/ResourceDictionarys/Styles/TextBoxStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
