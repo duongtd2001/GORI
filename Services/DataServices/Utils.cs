@@ -9,7 +9,7 @@ namespace GORI.Services.DataServices
 {
     public class Utils
     {
-        public static string DATAPATH = Path.Combine("C:\\Users\\duong\\Documents\\Misumi", "DefSystem", "System");
+        public static string DATAPATH = Path.Combine("C:\\Users\\ASUS\\Downloads", "DefSystem", "System");
         public static string MACHINEDATA_FILENAME = "MachineData.ini";
         public static string SYSTEMDATA_FILENAME = "System.ini";
         public static string VISIONDATA_FILENAME = "VisionJob.ini";
