@@ -144,6 +144,7 @@
     </Compile>
     <Compile Include="Helpers\AutoFocusHelper.cs" />
     <Compile Include="Models\IsPlotView.cs" />
+    <Compile Include="Models\mDictinaryEmployees.cs" />
     <Compile Include="Services\Bootstrapper.cs" />
     <Compile Include="Services\DataServices\ExcelRW.cs" />
     <Compile Include="Services\DataServices\FileRW.cs" />
@@ -152,11 +153,15 @@
     <Compile Include="Services\DataServices\MasterTorque.cs" />
     <Compile Include="Services\Process\Process_Torque.cs" />
     <Compile Include="Services\DataServices\Utils.cs" />
+    <Compile Include="ViewModels\EmployeesViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ReportViewModel.cs" />
     <Compile Include="ViewModels\SettingViewModel.cs" />
+    <Compile Include="Views\EmployeesView.xaml.cs">
+      <DependentUpon>EmployeesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
     </Compile>
@@ -222,6 +227,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResourceDictionarys\UIColors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EmployeesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

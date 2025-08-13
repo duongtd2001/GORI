@@ -45,6 +45,9 @@ namespace GORI.ViewModels
         private PlotModel _plotModel = null;
         public PlotModel MyModel { get => _plotModel; set { _plotModel = value; NotifyOfPropertyChange(() => MyModel); } }
 
+        private object _ucEmployees;
+        public object ucEmployees { get => _ucEmployees; set { _ucEmployees = value; NotifyOfPropertyChange(() => ucEmployees); } }
+
         TcpClient client;
         ModbusIpMaster master;
         private int signalCount = 0;
@@ -58,15 +61,18 @@ namespace GORI.ViewModels
         private MasterTorque masterTorque;
         private ExcelRW excelRW;
         private Process_Torque process_Torque;
+        private EmployeesViewModel employeesViewModel;
 
 
         public HomeViewModel(MasterTorque _masterTorque, ref ExcelRW _saveExcel, ref Process_Torque _process_Torque)
         {
-            //excelRW = _saveExcel;
+            excelRW = _saveExcel;
             masterTorque = _masterTorque;
             process_Torque = _process_Torque;
+            employeesViewModel = new EmployeesViewModel(ref excelRW);
             DrawingChart();
             Start();
+            ucEmployees = employeesViewModel;
         }
         
 

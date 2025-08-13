@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="GORI.Views.EmployeesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GORI.Views"
+             xmlns:focus="clr-namespace:GORI.Helpers"
+             mc:Ignorable="d">
+    <Border BorderThickness="1" Background="Transparent">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{StaticResource winBoderColor1}" Offset="0"/>
+                <GradientStop Color="{StaticResource winBoderColor2}" Offset="0.5"/>
+                <GradientStop Color="{StaticResource winBoderColor3}" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+            <UniformGrid Rows="8" HorizontalAlignment="Stretch">
+                <TextBlock Text="ID" Foreground="Yellow" Margin="20,0,20,0"/>
+                <TextBox x:Name="txtUser" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" focus:AutoFocusHelper.IsFocused="{Binding IsIDFocused}"  FontSize="15" FontWeight="Medium" FontFamily="Montserrat" Foreground="Yellow"
+                        CaretBrush="LightGray" BorderBrush="Yellow" BorderThickness="0,0,0,2" Height="28" VerticalContentAlignment="Center" Margin="20,0,20,0" Padding="20,0,0,0">
+                    <TextBox.Background>
+                        <ImageBrush  Stretch="None" AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+                <!--helpers:AutoFocusHelper.IsFocused="{Binding IsPOFocused}"-->
+
+                <TextBlock Text="NAME" Foreground="Aqua" Margin="20,0,20,0"/>
+                <TextBox Text="{Binding FullName}" Foreground="Aqua" Margin="20,0,20,0" CaretBrush="LightGray" BorderBrush="Aqua" BorderThickness="0,0,0,2" FontSize="15"
+                        FontWeight="Medium" FontFamily="Montserrat" VerticalContentAlignment="Center" Padding="20,0,0,0" IsReadOnly="True">
+                    <TextBox.Background>
+                        <ImageBrush Stretch="None" AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBlock Text="PO" Foreground="DeepPink" Margin="20,0,20,0"/>
+                <TextBox x:Name="txtPO" Text="{Binding PO, UpdateSourceTrigger=PropertyChanged}" focus:AutoFocusHelper.IsFocused="{Binding IsPOFocused}" Foreground="DeepPink" Margin="20,0,20,0" CaretBrush="LightGray"  BorderBrush="DeepPink"  BorderThickness="0,0,0,2" FontSize="15"
+                        FontWeight="Medium" FontFamily="Montserrat"  VerticalContentAlignment="Center"  Padding="20,0,0,0" >
+                    <TextBox.Background>
+                        <ImageBrush Stretch="None" AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBlock Text="{Binding ErrorMessage}" Foreground="#D7596D" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" Margin="0,10,0,0" TextWrapping="Wrap"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </UniformGrid>
+        </StackPanel>
+    </Border>
+</UserControl>

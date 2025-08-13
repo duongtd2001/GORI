@@ -93,8 +93,6 @@ namespace GORI.Services.Process
             mProcessStatus = ProcessStatus.INITIALIZE;
             List<int> triggerArr = new List<int>();
             List<double> templist = new List<double>();
-            queue.Clear();
-            mData.Clear();
             //sPlotView.isPlot = true;
             while (mThreadFlag)
             {
@@ -105,13 +103,15 @@ namespace GORI.Services.Process
                     switch(mProcessStatus)
                     {
                         case ProcessStatus.INITIALIZE:
+                            queue.Clear();
+                            mData.Clear();
                             if (PLCComm.IsModbus())
                             {
                                 mProcessStatus = ProcessStatus.CHECK_PLC_SIGNAL;
                             }
                             break;
                         case ProcessStatus.CHECK_PLC_SIGNAL:
-                            triggerArr = PLCComm.ReadMutilHoldingInt(4, 3);
+                            triggerArr = PLCComm.ReadMutilHoldingInt(17, 3);
 
                             if (triggerArr[0] == 0 || triggerArr[2] == 0)
                             {
@@ -136,7 +136,7 @@ namespace GORI.Services.Process
                         case ProcessStatus.RESULT_NG:
                             break;
                         case ProcessStatus.SAVE_DATA:
-                            excelRW.AddColumn(templist[0].ToString());
+                            excelRW.AddColumn(mDictinaryEmployees.EmployeesInfo["PO"]);
                             excelRW.SaveData(mData);
                             mProcessStatus = ProcessStatus.WAIT_COM_ACK;
                             break;
